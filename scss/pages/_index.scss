@@ -1,0 +1,737 @@
+@use "../components/buttons" as btns;
+@use "../utils/variables" as var;
+@use "../layout/flex" as flx;
+@use "../utils/mixins" as mix;
+
+.section-hero {
+  padding-top: 120px;
+  padding-bottom: 100px;
+  background-color: var.$bg-color-121517;
+  .section-hero-page {
+    @include flx.flex(space-between, center, 0);
+    @media (max-width: 1024px) {
+      flex-direction: column;
+    }
+    img {
+      width: 100%;
+      animation: pupkin 1000ms infinite;
+      transition: 0.5s all;
+      @media (max-width: 900px) {
+        padding-bottom: 50px;
+      }
+    }
+    @keyframes pupkin {
+      0% {
+        transform: rotate(1deg);
+      }
+      100% {
+        transform: rotate(-1deg);
+      }
+    }
+    h1 {
+      padding-bottom: 54px;
+      max-width: 540px;
+      color: var.$bg-color-FFFFFF;
+      @include mix.font(800, 80px, 109.00000000000001%, -3%);
+      span {
+        text-shadow: -27px 7px 27px rgba(35, 114, 73, 0.59);
+        color: var.$bg-color-35c66b;
+      }
+      @media (max-width: 500px) {
+        @include mix.font(700, 60px, 109.00000000000001%, -3%);
+      }
+    }
+    p {
+      max-width: 570px;
+      @include mix.font(400, 20px, 163%, -2%);
+      color: var.$bg-color-d9d9d9;
+    }
+    .section-hero-btn {
+      @include flx.flex(0, center, 30px);
+      padding-top: 54px;
+      @media (max-width: 560px) {
+        flex-direction: column;
+      }
+      .hero-btn-select {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, var.$bg-color-35c66b 0px -12px 30px,
+          var.$bg-color-35c66b 0px 4px 6px, var.$bg-color-35c66b 0px 12px 13px,
+          var.$bg-color-35c66b 0px -3px 5px;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        cursor: pointer;
+        @include btns.btn(20px 79.38px 19.65px 78px, 82.83px, 0px);
+        @include mix.font(639, 24px, 146%, -2%);
+        background: var.$bg-color-liner-green;
+        color: var.$bg-color-FFFFFF;
+        border: none;
+        transition: 0.5s all;
+        &::before {
+          content: "";
+          position: absolute;
+
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: var.$bg-color-FFFFFF;
+          transition: left 0.3s ease-in-out;
+          z-index: -1;
+        }
+        &:hover::before {
+          left: 0;
+        }
+        &:hover {
+          color: var.$bg-color-35c66b;
+        }
+        @media (max-width: 380px) {
+          @include btns.btn(20px 50px 19.65px 50px, 82.83px, 0px);
+        }
+      }
+      .hero-btn-more {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, var.$bg-color-FFFFFF 0px -12px 30px,
+          var.$bg-color-FFFFFF 0px 4px 6px, var.$bg-color-FFFFFF 0px 12px 13px,
+          var.$bg-color-FFFFFF 0px -3px 5px;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        @include btns.btn(
+          20px 53.71px 19.65px 54.26px,
+          82.83px,
+          1.02px solid linear-gradient(146.68deg, #dadada -17.38%, rgba(218, 218, 218, 0) 91.61%)
+        );
+        @include mix.font(400, 24px, 146%, -3%);
+        background-color: var.$bg-color-121517;
+        color: var.$bg-color-FFFFFF;
+        transition: 0.5s all;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: var.$bg-color-FFFFFF;
+          transition: left 0.3s ease-in-out;
+          z-index: -1;
+        }
+        &:hover::before {
+          left: 0;
+        }
+        &:hover {
+          color: var.$bg-color-121517;
+        }
+      }
+    }
+    .hero-award-cards {
+      padding-top: 54px;
+      @include flx.flex(0, center, 46.02px);
+      @media (max-width: 520px) {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .hero-award-card {
+        animation: heroBtn 1s infinite;
+        h2 {
+          color: var.$bg-color-FFFFFF;
+          @include mix.font(400, 62px, 109.00000000000001%, -3%);
+          span {
+            color: var.$bg-color-35c66b;
+          }
+        }
+        p {
+          @include mix.font(400, 20px, 144%, -2%);
+          color: var.$bg-color-d9d9d9;
+          transition: 0.5s all;
+        }
+        @keyframes heroBtn {
+          0% {
+            transform: scale(1);
+          }
+          100% {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+    .section-hero-pumpkin {
+      filter: drop-shadow(10px 10px 10px var.$bg-color-35c66b);
+    }
+  }
+  .secton-circle {
+    filter: drop-shadow(10px 10px 10px var.$bg-color-35c66b);
+    left: 60px;
+    right: 200px;
+    position: absolute;
+    z-index: 99;
+    animation: weHave 1s infinite;
+    @media (max-width: 720px) {
+      display: none;
+    }
+    @keyframes weHave {
+      0% {
+        transform: rotate(0);
+      }
+      50% {
+        transform: rotate(45deg);
+      }
+      100% {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  .section-hero-page-bottom-card {
+    position: relative;
+    margin-top: 120px;
+    @include flx.flex(space-between, center, 0);
+    @include mix.card(51px 78px 51px 78px, 100%, 46px, var.$bg-color-FFFFFF);
+    @media (max-width: 900px) {
+      flex-direction: column;
+      margin: 0 auto;
+      @include mix.card(51px 40px 51px 40px, 90%, 46px, var.$bg-color-FFFFFF);
+    }
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, var.$bg-color-35c66b 0px -12px 30px,
+      var.$bg-color-35c66b 0px 4px 6px, var.$bg-color-35c66b 0px 12px 13px,
+      var.$bg-color-35c66b 0px -3px 5px;
+    img {
+      filter: drop-shadow(10px 10px 10px var.$bg-color-35c66b);
+      animation: heroBtn 1s infinite;
+    }
+    h3 {
+      text-align: center;
+      color: var.$bg-color-121517;
+      @include mix.font(500, 32px, 163%, -2%);
+    }
+    p {
+      @include mix.font(400, 20.13px, 163%, -2%);
+      text-align: center;
+      color: var.$bg-color-121517;
+      max-width: 250px;
+    }
+  }
+}
+.section-make {
+  background-color: var.$bg-color-121517;
+  .section-make-page {
+    @include flx.flex(space-between, 0, 0);
+    @media (max-width: 1186px) {
+      flex-direction: column;
+      @include flx.flex(center, center, 0);
+    }
+    .section-make-image {
+      filter: drop-shadow(10px 10px 10px var.$bg-color-35c66b);
+      position: relative;
+    }
+    @media (max-width: 669px) {
+      .section-make-photo {
+        width: 100%;
+      }
+    }
+    .section-make-circle {
+      position: relative;
+      top: -800px;
+      left: 400px;
+      animation: makeCircle 1s infinite;
+      @media (max-width: 1286px) {
+        top: -600px;
+        left: -200px;
+      }
+      @media (max-width: 842px) {
+        top: -800px;
+        left: 400px;
+      }
+      @media (max-width: 640px) {
+        display: none;
+      }
+      @keyframes makeCircle {
+        0% {
+          transform: rotate(0);
+        }
+        50% {
+          transform: rotate(45deg);
+        }
+        100% {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+    .section-make-texts {
+      margin-top: 20px;
+      @include flx.flex(0, center, 0);
+      flex-direction: column;
+      h2 {
+        max-width: 457px;
+        @include mix.font(800, 80px, 109.00000000000001%, -3%);
+        color: var.$bg-color-FFFFFF;
+        span {
+          color: var.$bg-color-35c66b;
+          text-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, var.$bg-color-35c66b 0px -12px 30px;
+        }
+        @media (max-width: 445px) {
+          @include mix.font(600, 60px, 109.00000000000001%, -3%);
+          color: var.$bg-color-FFFFFF;
+        }
+      }
+      p {
+        margin-top: 63px;
+        max-width: 457px;
+        @include mix.font(400, 20px, 163%, -2%);
+        color: var.$bg-color-d9d9d9;
+      }
+      .section-make-cooking-btn {
+        filter: drop-shadow(10px 10px 10px var.$bg-color-35c66b);
+        margin-top: 63px;
+        @include flx.flex(center, center, 0);
+        width: 557px;
+        height: 275px;
+        background: url("../images/make-section/cooking.svg");
+        @media (max-width: 560px) {
+          max-width: 557px;
+          width: 100%;
+          max-width: 100%;
+        }
+
+        button {
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, var.$bg-color-35c66b 0px -12px 30px,
+            var.$bg-color-35c66b 0px 4px 6px, var.$bg-color-35c66b 0px 12px 13px,
+            var.$bg-color-35c66b 0px -3px 5px;
+          cursor: pointer;
+          position: relative;
+          overflow: hidden;
+          z-index: 1;
+          @include mix.font(639, 24px, 146%, -2%);
+          border: none;
+          padding: 20px 42px;
+          background-color: var.$bg-color-35c66b;
+          border-radius: 82px;
+          color: var.$bg-color-FFFFFF;
+          @media (max-width: 500px) {
+            padding: 15px 15px;
+            @include mix.font(500, 18px, 146%, -2%);
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var.$bg-color-FFFFFF;
+            transition: left 0.3s ease-in-out;
+            z-index: -1;
+          }
+          &:hover::before {
+            left: 0;
+          }
+          &:hover {
+            color: var.$bg-color-35c66b;
+          }
+        }
+      }
+    }
+  }
+}
+.section-carousel {
+  @media (max-width: 1185px) {
+    padding-top: 100px;
+  }
+  background-color: var.$bg-color-121517;
+  .section-carousel-page {
+    .section-carousel-texts {
+      @include flx.flex(0, center, 72px);
+      @media (max-width: 940px) {
+        flex-direction: column;
+      }
+      h2 {
+        max-width: 392px;
+        @include mix.font(800, 80px, 109.00000000000001%, -3%);
+        color: var.$bg-color-FFFFFF;
+        span {
+          text-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, var.$bg-color-35c66b 0px -12px 30px;
+
+          color: var.$bg-color-35c66b;
+        }
+        @media (max-width: 450px) {
+          @include mix.font(600, 55px, 109.00000000000001%, -3%);
+        }
+      }
+      p {
+        max-width: 444px;
+        @include mix.font(400, 20px, 163%, -2%);
+        color: var.$bg-color-d9d9d9;
+      }
+    }
+    .owl-carousel-card {
+      margin-top: 54px;
+      box-shadow: var.$bg-color-35c66b 0px 3px 8px;
+      border: 1.5px solid var.$bg-color-35c66b;
+      padding: 60px 36px 0 36px;
+      @include flx.flex(center, 0, 40px);
+      width: 277px;
+
+      border-radius: 29px;
+      @media (max-width: 442px) {
+        padding: 60px 16px 0 16px;
+      }
+      .owl-carousel-image {
+        img {
+          animation: fastRotate 1s infinite;
+          filter: drop-shadow(10px 10px 10px var.$bg-color-35c66b);
+          @keyframes fastRotate {
+            0% {
+              transform: rotate(0);
+            }
+            50% {
+              transform: rotate(20deg);
+            }
+            100% {
+              transform: rotate(-20deg);
+            }
+          }
+        }
+        box-shadow: var.$bg-color-35c66b 0px 3px 8px;
+        @include flx.flex(center, center, 0);
+        margin: 0 auto;
+        width: 180px;
+        height: 180px;
+        border-radius: 100px;
+        background-color: var.$bg-color-35c66b;
+      }
+      h3 {
+        padding-top: 30px;
+        text-align: center;
+        color: var.$bg-color-FFFFFF;
+        @include mix.font(500, 32px, 163%, -2%);
+      }
+      p {
+        padding-top: 18px;
+        @include mix.font(400, 20.13px, 163%, -2%);
+        text-align: center;
+        color: var.$bg-color-d9d9d9;
+      }
+      .owl-carousel-price {
+        padding-top: 4px;
+        @include flx.flex(space-between, center, 0);
+        h4 {
+          @include mix.font(500, 32px, 163%, -2%);
+          color: var.$bg-color-FFFFFF;
+        }
+        p {
+          @include mix.font(400, 20.13px, 163%, -2%);
+          color: var.$bg-color-d9d9d9;
+        }
+      }
+      button {
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        box-shadow: var.$bg-color-35c66b 0px 3px 8px;
+        margin: 30px auto;
+        border: none;
+        display: flex;
+        align-items: center;
+        padding: 14px 38px;
+        background-color: var.$bg-color-35c66b;
+        border-radius: 59.72px;
+        color: var.$bg-color-FFFFFF;
+        @include mix.font(639, 17.3px, 146%, -2%);
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: var.$bg-color-FFFFFF;
+          transition: left 0.3s ease-in-out;
+          z-index: -1;
+        }
+        &:hover::before {
+          left: 0;
+        }
+        &:hover {
+          color: var.$bg-color-35c66b;
+        }
+      }
+    }
+  }
+}
+.section-events {
+  padding-top: 100px;
+  background-color: var.$bg-color-121517;
+  .section-events-texts {
+    @include flx.flex(end, center, 72px);
+    @media (max-width: 955px) {
+      flex-direction: column;
+    }
+    p {
+      max-width: 457px;
+      color: var.$bg-color-d9d9d9;
+      @include mix.font(540, 20px, 163%, -2%);
+    }
+    h2 {
+      max-width: 400px;
+      @include mix.font(800, 80px, 109.00000000000001%, -3%);
+      color: var.$bg-color-FFFFFF;
+      span {
+        color: var.$bg-color-35c66b;
+        text-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, var.$bg-color-35c66b 0px -12px 30px;
+      }
+    }
+  }
+  .section-events-cards-top {
+    margin-top: 54px;
+    @include flx.flex(space-between, center, 23px);
+    @media (max-width: 900px) {
+      flex-direction: column;
+    }
+    .section-events-card-1 {
+      border-radius: 30px;
+      width: 600px;
+      background: url("../../images/section-events/coffe-1.png");
+      background-size: cover; /* Rasmni ekranga mos qiladi */
+      background-position: center; /* Markaziy joylashuv */
+      background-repeat: no-repeat; /* Rasm qaytarilmasin */
+      h2 {
+        padding: 44px 0 0 28.55px;
+        max-width: 260px;
+        @include mix.font(500, 32px, 109.00000000000001%, 0%);
+        color: var.$bg-color-FFFFFF;
+      }
+    }
+    .section-events-card-2 {
+      border-radius: 30px;
+      width: 600px;
+      background: url("../../images/section-events/coffe-2.png");
+      background-size: cover; /* Rasmni ekranga mos qiladi */
+      background-position: center; /* Markaziy joylashuv */
+      background-repeat: no-repeat; /* Rasm qaytarilmasin */
+    }
+    .section-events-card-1,
+    .section-events-card-2 {
+      box-shadow: var.$bg-color-35c66b 0px 3px 8px;
+      border: 1.5px solid var.$bg-color-35c66b;
+      @media (max-width: 680px) {
+        width: 100%;
+      }
+      h2 {
+        padding: 44px 0 0 28.55px;
+        max-width: 260px;
+        @include mix.font(500, 32px, 109.00000000000001%, 0%);
+        color: var.$bg-color-FFFFFF;
+      }
+      button {
+        margin: 44px 0 27.35px 28.55px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        padding: 30px 55px;
+        border-radius: 85px;
+        background-color: var.$bg-color-35c66b;
+        border: none;
+        color: var.$bg-color-FFFFFF;
+        @include mix.font(600, 24px, 146%, -3%);
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: var.$bg-color-FFFFFF;
+          transition: left 0.3s ease-in-out;
+          z-index: -1;
+        }
+        &:hover::before {
+          left: 0;
+        }
+        &:hover {
+          color: var.$bg-color-35c66b;
+        }
+      }
+    }
+  }
+  .section-events-cards-bottom {
+    margin-top: 24px;
+    @include flx.flex(space-between, center, 23px);
+    @media (max-width: 900px) {
+      flex-direction: column;
+    }
+    .section-events-card-3 {
+      border-radius: 30px;
+      width: 395px;
+      background: url("../../images/section-events/coffe-3.png");
+      transform-origin: center;
+    }
+    .section-events-card-4 {
+      border-radius: 30px;
+      width: 395px;
+      background: url("../../images/section-events/coffe-4.png");
+    }
+
+    .section-events-card-5 {
+      border-radius: 30px;
+      width: 395px;
+      background: url("../../images/section-events/coffe-5.png");
+    }
+    .section-events-card-3,
+    .section-events-card-4,
+    .section-events-card-5 {
+      box-shadow: var.$bg-color-35c66b 0px 3px 8px;
+      border: 1.5px solid var.$bg-color-35c66b;
+      @media (max-width: 430px) {
+        width: 100%;
+      }
+      padding: 44px 0 0 28.55px;
+      h2 {
+        max-width: 300px;
+        @include mix.font(500, 30px, 109.00000000000001%, 0%);
+        color: var.$bg-color-FFFFFF;
+      }
+      button {
+        margin: 44px 0 27.35px 28.55px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        padding: 30px 55px;
+        border-radius: 85px;
+        background-color: var.$bg-color-35c66b;
+        border: none;
+        color: var.$bg-color-FFFFFF;
+        @include mix.font(600, 24px, 146%, -3%);
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: var.$bg-color-FFFFFF;
+          transition: left 0.3s ease-in-out;
+          z-index: -1;
+        }
+        &:hover::before {
+          left: 0;
+        }
+        &:hover {
+          color: var.$bg-color-35c66b;
+        }
+      }
+    }
+  }
+}
+.section-contacts {
+  padding-top: 148px;
+  background-color: var.$bg-color-121517;
+  .section-contacts-page {
+    @include flx.flex(space-between, center, 0);
+    @media (max-width: 870px) {
+      flex-direction: column;
+      gap: 40px;
+    }
+    .section-contacts-texts {
+      h2 {
+        max-width: 365px;
+        color: var.$bg-color-FFFFFF;
+        @include mix.font(800, 80px, 109%, -3%);
+
+        span {
+          color: var.$bg-color-35c66b;
+          text-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, var.$bg-color-35c66b 0px -12px 30px;
+        }
+        @media (max-width: 400px) {
+          @include mix.font(600, 60px, 109%, -3%);
+        }
+      }
+      p {
+        margin-top: 52px;
+        @include mix.font(400, 20px, 163%, -2%);
+        max-width: 387px;
+        color: var.$bg-color-d9d9d9;
+      }
+
+      .section-contacts-instagram {
+        margin-top: 60px;
+        a {
+          @include flx.flex(0, center, 14px);
+          @include mix.font(500, 32px, 132%, 0%);
+          color: var.$bg-color-FFFFFF;
+          img {
+            animation: instagram 0.5s infinite;
+            @keyframes instagram {
+              0% {
+                transform: scale(1);
+              }
+              100% {
+                transform: scale(1.1);
+              }
+            }
+          }
+          @media (max-width: 400px) {
+            @include mix.font(400, 27px, 132%, 0%);
+          }
+        }
+      }
+      .section-contacts-telefon {
+        margin-top: 28px;
+        a {
+          @include flx.flex(0, center, 14px);
+          @include mix.font(500, 32px, 132%, 0%);
+          color: var.$bg-color-FFFFFF;
+          img {
+            animation: telefon 0.5s infinite;
+            @keyframes telefon {
+              0% {
+                transform: rotate(0);
+              }
+              50% {
+                transform: rotate(20deg);
+              }
+              100% {
+                transform: rotate(-20deg);
+              }
+            }
+          }
+          @media (max-width: 400px) {
+            @include mix.font(400, 27px, 132%, 0%);
+          }
+          @media (max-width: 342px) {
+            @include mix.font(400, 22px, 132%, 0%);
+          }
+        }
+      }
+    }
+    .section-contacts-img-cards {
+      position: relative;
+      .contacts-image {
+        filter: drop-shadow(10px 10px 10px var.$bg-color-35c66b);
+        @media (max-width: 470px) {
+          width: 100%;
+        }
+      }
+
+      .contacts-circle {
+        left: -30px;
+        top: -50px;
+        position: absolute;
+        z-index: 9;
+        animation: contactCircle 1s infinite;
+        transition: 0.5s all;
+        @keyframes contactCircle {
+          0% {
+            transform: rotate(0);
+          }
+          50% {
+            transform: rotate(25deg);
+          }
+          100% {
+            transform: rotate(-25deg);
+          }
+        }
+      }
+    }
+  }
+}

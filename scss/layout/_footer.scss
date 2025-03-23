@@ -1,0 +1,97 @@
+@use "../components/buttons" as btns;
+@use "../base/typography" as font;
+@use "../utils/variables" as var;
+@use "../layout/flex" as flx;
+@use "../utils/mixins" as mix;
+footer {
+  padding: 50px 0 120px 0;
+  background-color: var.$bg-color-121517;
+  .footer-top {
+    @include flx.flex(space-between, 0, 60px);
+    @media (max-width: 1110px) {
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    .footer-logo {
+      filter: drop-shadow(10px 10px 10px var.$bg-color-35c66b);
+    }
+    .footer-main,
+    .footer-we-make,
+    .footer-products,
+    .footer-events,
+    .footer-contacts {
+      h3 {
+        @include mix.font(400, 20px, 100%, -1%);
+        color: var.$bg-color-35c66b;
+      }
+      ul li {
+        margin-top: 10px;
+        a {
+          color: var.$bg-color-FFFFFF;
+          @include mix.font(400, 20px, 100%, -1%);
+        }
+      }
+    }
+  }
+  .footer-bottom {
+    @include flx.flex(space-between, center, 20px);
+    @media (max-width: 715px) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    padding-top: 90px;
+    .footer-contacts-telefon {
+      a {
+        @include flx.flex(0, center, 14px);
+        @include mix.font(500, 32px, 132%, 0%);
+        color: var.$bg-color-FFFFFF;
+        img {
+          animation: telefon 0.5s infinite;
+          @keyframes telefon {
+            0% {
+              transform: rotate(0);
+            }
+            50% {
+              transform: rotate(20deg);
+            }
+            100% {
+              transform: rotate(-20deg);
+            }
+          }
+        }
+        @media (max-width: 430px) {
+          @include mix.font(400, 22px, 132%, 0%);
+        }
+        @media (max-width: 350px) {
+          @include mix.font(400, 18px, 132%, 0%);
+        }
+      }
+    }
+    .footer-contacts-instagram {
+      a {
+        @include flx.flex(0, center, 14px);
+        @include mix.font(500, 32px, 132%, 0%);
+        color: var.$bg-color-FFFFFF;
+        img {
+          animation: instagram 0.5s infinite;
+          @keyframes instagram {
+            0% {
+              transform: scale(1);
+            }
+            100% {
+              transform: scale(1.1);
+            }
+          }
+        }
+        @media (max-width: 400px) {
+          @include mix.font(400, 27px, 132%, 0%);
+        }
+        @media (max-width: 430px) {
+          @include mix.font(400, 22px, 132%, 0%);
+        }
+      }
+    }
+  }
+}

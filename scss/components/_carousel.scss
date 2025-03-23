@@ -1,0 +1,47 @@
+@use "../utils/variables" as var;
+.owl-nav.disabled {
+  display: flex !important;
+  opacity: 1 !important;
+  pointer-events: all !important;
+}
+.owl-nav {
+  width: 84px;
+  height: 84px;
+  box-shadow: var.$bg-color-35c66b 0px 3px 8px;
+  margin-left: 54px;
+  margin-right: 185px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 300px;
+  border-radius: 29px;
+  display: flex;
+  align-items: center !important;
+  color: var.$bg-color-35c66b;
+  padding: 32px 24px;
+  border: 1.5px solid var.$bg-color-35c66b;
+  height: 60px;
+  .owl-prev {
+    display: none;
+  }
+  @media (max-width: 1298px) {
+    margin-left: 54px;
+    margin-right: 40px;
+  }
+  @media (max-width: 480px) {
+    margin-left: 20px;
+    margin-right: 0px;
+  }
+  @media (max-width: 442px) {
+    margin-left: 10px;
+  }
+  @media (max-width: 474px) {
+    display: none;
+  }
+}
+.owl-carousel {
+  display: flex !important;
+}
+
+.owl-carousel .owl-item img {
+  width: 200%;
+}

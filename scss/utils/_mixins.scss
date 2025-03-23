@@ -1,0 +1,12 @@
+@mixin card($padding, $width, $radius, $bg-color) {
+  padding: $padding;
+  width: $width;
+  border-radius: $radius;
+  background-color: $bg-color;
+}
+@mixin font($weight, $size, $height, $letter) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+  letter-spacing: $letter;
+}
