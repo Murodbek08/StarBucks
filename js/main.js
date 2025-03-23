@@ -34,7 +34,7 @@ function shrink() {
 
 const loading = document.getElementById("loading");
 
-const loadingDuration = 2000; // 1.8s
+const loadingDuration = 3000; // 1.8s
 
 setTimeout(() => {
   loading.classList.add("loading-none");
@@ -63,5 +63,5 @@ myBtn.onclick = function () {
     } else {
       window.scrollBy(0, scrollStep);
     }
-  }, 15); 
+  }, 15);
 };

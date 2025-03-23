@@ -136,7 +136,7 @@ header .desctop-navabar ul li a:hover::after {
 header .mobilne-navbar {
   display: none;
   position: fixed;
-  z-index: 999999999999999;
+  z-index: 10000000000000000;
   bottom: 0;
   left: 0;
   right: 0;
@@ -308,7 +308,8 @@ header .indicator::after {
 }
 @media (max-width: 361px) {
   header .mobilne-navbar ul li:nth-child(1).active ~ .indicator {
-    left: 7px;
+    padding-right: 30px;
+    left: 40px;
     transform: translateX(0px);
   }
 }
@@ -344,19 +345,19 @@ header .indicator::after {
 }
 @media (max-width: 376px) {
   header .mobilne-navbar ul li:nth-child(1).active ~ .indicator {
-    left: 15px;
+    left: 8px;
     transform: translateX(0px);
   }
 }
 @media (max-width: 376px) {
   header .mobilne-navbar ul li:nth-child(2).active ~ .indicator {
-    left: 85px;
+    left: 80px;
     transform: translateX(70px);
   }
 }
 @media (max-width: 376px) {
   header .mobilne-navbar ul li:nth-child(3).active ~ .indicator {
-    left: 150px;
+    left: 145px;
     transform: translateX(140px);
   }
 }

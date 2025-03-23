@@ -52,7 +52,7 @@ header {
   .mobilne-navbar {
     display: none;
     position: fixed;
-    z-index: 999999999999999;
+    z-index: 9999999999999999;
     bottom: 0;
     left: 0;
     right: 0;
@@ -222,7 +222,8 @@ header {
   }
   @media (max-width: 361px) {
     .mobilne-navbar ul li:nth-child(1).active ~ .indicator {
-      left: 7px;
+      padding-right: 30px;
+      left: 40px;
       transform: translateX(calc(70px * 0));
     }
   }
@@ -258,19 +259,19 @@ header {
   }
   @media (max-width: 376px) {
     .mobilne-navbar ul li:nth-child(1).active ~ .indicator {
-      left: 15px;
+      left: 8px;
       transform: translateX(calc(70px * 0));
     }
   }
   @media (max-width: 376px) {
     .mobilne-navbar ul li:nth-child(2).active ~ .indicator {
-      left: 85px;
+      left: 80px;
       transform: translateX(calc(70px * 1));
     }
   }
   @media (max-width: 376px) {
     .mobilne-navbar ul li:nth-child(3).active ~ .indicator {
-      left: 150px;
+      left: 145px;
       transform: translateX(calc(70px * 2));
     }
   }
